@@ -1,0 +1,40 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Database configuration with credentials
+config/database.php
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Uploads and temporary files
+uploads/*
+!uploads/.gitkeep
+temp/
+tmp/
+
+# Composer
+vendor/
+composer.lock
+
+# Node modules (if used)
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride

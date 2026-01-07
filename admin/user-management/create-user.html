@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User - Courier Services</title>
+    <link rel="stylesheet" href="./create-user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shipping-fast"></i>
+                Courier Services
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#" class="active">Users</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="../auth/admin-login.html" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Add New User</h2>
+            </div>
+
+            <form id="addUserForm" class="user-form" onsubmit="return handleSubmit(event)">
+                <div class="form-section">
+                    <div class="profile-picture-section">
+                        <div class="profile-picture-container">
+                            <img id="profilePreview" src="https://via.placeholder.com/150" alt="Profile Picture">
+                            <div class="upload-overlay">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <input type="file" 
+                                id="profilePicture" 
+                                name="profilePicture" 
+                                accept="image/*"
+                                required>
+                        </div>
+                        <p class="upload-text">Upload Profile Picture</p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" 
+                                id="fullName" 
+                                name="fullName" 
+                                placeholder="Full Name*"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-at"></i>
+                            <input type="text" 
+                                id="username" 
+                                name="username" 
+                                placeholder="Username*"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="Email Address*"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" 
+                                id="phoneNumber" 
+                                name="phoneNumber" 
+                                placeholder="Phone Number*"
+                                pattern="[0-9]{10,}"
+                                title="Please enter at least 10 digits"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" 
+                                id="cnicNumber" 
+                                name="cnicNumber" 
+                                placeholder="CNIC Number (e.g., 12345-1234567-1)*"
+                                pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}"
+                                title="Please enter CNIC in format: 12345-1234567-1"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cnicPicture">CNIC Picture (Front & Back)*</label>
+                        <div class="input-group file-input cnic-upload">
+                            <input type="file" 
+                                id="cnicPicture" 
+                                name="cnicPicture" 
+                                accept="image/*"
+                                multiple
+                                required>
+                            <div class="file-info">No files chosen</div>
+                        </div>
+                        <div class="cnic-preview">
+                            <div id="cnicFrontPreview" class="cnic-preview-box">
+                                <span>Front Side</span>
+                            </div>
+                            <div id="cnicBackPreview" class="cnic-preview-box">
+                                <span>Back Side</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <textarea 
+                                id="address" 
+                                name="address" 
+                                placeholder="Complete Address*"
+                                required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact Section -->
+                    <div class="form-group section-divider">
+                        <h3>Emergency Contact</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-user-friends"></i>
+                            <input type="text" 
+                                id="emergencyContactName" 
+                                name="emergencyContactName" 
+                                placeholder="Emergency Contact Name*"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-phone-alt"></i>
+                            <input type="tel" 
+                                id="emergencyContactPhone" 
+                                name="emergencyContactPhone" 
+                                placeholder="Emergency Contact Phone*"
+                                pattern="[0-9]{10,}"
+                                title="Please enter at least 10 digits"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-user-circle"></i>
+                            <input type="text" 
+                                id="relationshipToUser" 
+                                name="relationshipToUser" 
+                                placeholder="Relationship to User*"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-map-marker"></i>
+                            <textarea 
+                                id="emergencyContactAddress" 
+                                name="emergencyContactAddress" 
+                                placeholder="Emergency Contact Address"
+                                ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Password*"
+                                required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm Password*"
+                                required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">Create User</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Password validation
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords don't match!");
+                return false;
+            }
+
+            const button = document.querySelector('.submit-button');
+            const buttonText = document.querySelector('.button-text');
+
+            button.classList.add('loading');
+            buttonText.textContent = 'Creating...';
+
+            // Simulate API call
+            setTimeout(() => {
+                button.classList.remove('loading');
+                buttonText.textContent = 'Create User';
+                alert('User created successfully!');
+                // You can redirect or clear form here
+            }, 1500);
+
+            return false;
+        }
+
+        // Handle profile picture preview
+        document.getElementById('profilePicture').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profilePreview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Handle password visibility toggle
+        document.querySelectorAll('.toggle-password').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    this.classList.remove('fa-eye');
+                    this.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    this.classList.remove('fa-eye-slash');
+                    this.classList.add('fa-eye');
+                }
+            });
+        });
+
+        // Handle CNIC picture preview
+        document.getElementById('cnicPicture').addEventListener('change', function(e) {
+            const files = e.target.files;
+            const fileInfo = e.target.parentElement.querySelector('.file-info');
+            
+            if (files.length > 0) {
+                fileInfo.textContent = `${files.length} file(s) selected`;
+                
+                // Preview first image as front
+                if (files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const frontPreview = document.getElementById('cnicFrontPreview');
+                        frontPreview.style.backgroundImage = `url(${e.target.result})`;
+                        frontPreview.classList.add('has-image');
+                    }
+                    reader.readAsDataURL(files[0]);
+                }
+                
+                // Preview second image as back
+                if (files[1]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const backPreview = document.getElementById('cnicBackPreview');
+                        backPreview.style.backgroundImage = `url(${e.target.result})`;
+                        backPreview.classList.add('has-image');
+                    }
+                    reader.readAsDataURL(files[1]);
+                }
+            } else {
+                fileInfo.textContent = 'No files chosen';
+                document.getElementById('cnicFrontPreview').style.backgroundImage = '';
+                document.getElementById('cnicBackPreview').style.backgroundImage = '';
+                document.getElementById('cnicFrontPreview').classList.remove('has-image');
+                document.getElementById('cnicBackPreview').classList.remove('has-image');
+            }
+        });
+    </script>
+</body>
+
+</html> 

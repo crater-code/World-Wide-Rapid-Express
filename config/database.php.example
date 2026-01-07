@@ -1,0 +1,11 @@
+<?php
+// Database configuration example
+// Copy this file to database.php and update with your actual credentials
+
+return [
+    'host' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'dbname' => 'courier_services_portal',
+    'charset' => 'utf8mb4',
+];

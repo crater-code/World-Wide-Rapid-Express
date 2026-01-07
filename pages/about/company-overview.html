@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Courier Services</title>
+    <link rel="stylesheet" href="./company-overview.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;   
+            align-items: center;
+            background: linear-gradient(to right, #fcd31b, #fef5c3);
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .brand h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .nav-links a:nth-child(1) {
+            color: red;
+        }
+
+        .nav-links .logout {
+            color: darkred;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #fff8dc;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+            padding-top: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-left: 20px;
+            transition: left 0.3s ease;
+            z-index: 1001;
+        }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .sidebar .logout {
+            color: darkred;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">
+            <img src="../../assets/images/Screenshot 2025-05-10 035929.png" alt="Logo" />
+            <h1>Courier<br>Services</h1>
+        </div>
+        <button class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="../../index.html">Track</a>
+            <a href="../services/solutions.html">Services</a>
+            <a href="./company-overview.html" class="active">About Us</a>
+            <a href="../../admin/auth/admin-login.html" class="login-link">Client Login</a>
+        </div>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+        <a href="../../index.html">Track</a>
+        <a href="../services/solutions.html">Services</a>
+        <a href="./company-overview.html" class="active">About Us</a>
+        <a href="../../admin/auth/admin-login.html" class="login-link">Client Login</a>
+    </div>
+
+    <a href="https://wa.me/923130558314" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <main class="main-content">
+        <section class="about-section">
+            <h1>About Us</h1>
+            <h2>your website name. Delivering the Future, Today.</h2>
+            <hr>
+            <p>
+                We are a newly established courier company, passionate about making deliveries simple, fast, and secure. As a fresh face in the industry, we are committed to building trust and delivering a modern, customer-focused experience from day one.
+            </p>
+        </section>
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">8,500+</div>
+                <div class="stat-label">People working at your website name</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Countries and territories served</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">₨ 12.7 billion</div>
+                <div class="stat-label">Revenue generated in 2024</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("open");
+        }
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
