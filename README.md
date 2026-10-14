@@ -22,7 +22,8 @@ Official web and operations portal for **World Wide Rapid Express**, an internat
 - [Local Development Setup](#-local-development-setup)
 - [Operations & Staff Workflow](#-operations--staff-workflow)
 - [API Reference](#-api-reference)
-- [Contributors & Contact](#-contributors--contact)
+- [Contributors](#-contributors)
+- [Organization & Support](#-organization--support)
 
 ---
 
@@ -282,7 +283,13 @@ Open **`http://localhost:3005`** in your browser.
 
 ---
 
-## 👥 Contributors & Contact
+## 👥 Contributors
+
+- **Sole Developer**: [Muhammad Ali](https://www.linkedin.com/in/muhammad-ali-23828a2b0/)
+
+---
+
+## 📞 Organization & Support
 
 - **Organization**: World Wide Rapid Express
 - **Website**: [World Wide Rapid Express](https://www.worldwiderapidexpress.com/)
