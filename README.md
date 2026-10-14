@@ -13,6 +13,7 @@ Official web and operations portal for **World Wide Rapid Express**, an internat
 
 ## 📑 Table of Contents
 
+- [Visual Showcase & Screenshots](#-visual-showcase--screenshots)
 - [Overview & Architecture](#-overview--architecture)
 - [Key Features](#-key-features)
 - [Multi-Carrier Telemetry & Tracking](#-multi-carrier-telemetry--tracking)
@@ -24,6 +25,20 @@ Official web and operations portal for **World Wide Rapid Express**, an internat
 - [API Reference](#-api-reference)
 - [Contributors](#-contributors)
 - [Organization & Support](#-organization--support)
+
+## 📸 Visual Showcase & Screenshots
+
+<div align="center">
+
+### Shipment Tracker & Hero Portal
+![Shipment Tracker & Hero Portal](./screenshots/hero.png)
+
+</div>
+
+| Enterprise Logistics & About Us | Footer, Global Network & WhatsApp Support |
+| :---: | :---: |
+| ![About & Services](./screenshots/about.png) | ![Footer & Support](./screenshots/footer.png) |
+| **Enterprise Freight & Services Overview**<br/>*Air, Sea & Land Logistics Solutions* | **Carrier Network & Customer Channels**<br/>*Live WhatsApp inquiry routing & contact details* |
 
 ---
 
